@@ -21,10 +21,6 @@ function App() {
 
     if (!destination) return;
 
-    if (destination.id === source.id) {
-      return;
-    }
-
     let add, active = data;
     
     console.log("Active: "+active)
