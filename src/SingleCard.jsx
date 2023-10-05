@@ -1,7 +1,6 @@
 import { Draggable } from 'react-beautiful-dnd';
 
 const SingleCard = ({ prod, index }) => {
-
     return (
         <>
             <Draggable draggableId={prod.id.toString()} index={index}>

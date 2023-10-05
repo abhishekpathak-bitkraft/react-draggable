@@ -1,5 +1,4 @@
 import SingleCard from "./SingleCard";
-import { Projects } from "./data";
 import { Droppable } from "react-beautiful-dnd";
 
 const divWrapper = {
@@ -15,7 +14,9 @@ const divWrapper = {
     borderRadius: '10px'
 };
 
-const Project = () => {
+const Project = ({ data }) => {
+
+
     return (
         <>
             <Droppable droppableId="allDops">
@@ -25,7 +26,7 @@ const Project = () => {
                         {...provided.droppableProps}
                     >
                         <div>
-                            {Projects && Projects.map((prod, index) => (
+                            {data && data.map((prod, index) => (
                                 <SingleCard key={prod.id} prod={prod} index={index} />
                             ))}
                         </div>
