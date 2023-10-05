@@ -4,6 +4,12 @@ import Project from './Project';
 import { DragDropContext } from 'react-beautiful-dnd';
 
 function App() {
+
+  const onDragEnd =(result) =>{
+    console.log(result)
+  }
+
+
   return (
     <div style={{
       display:"flex",
@@ -12,8 +18,11 @@ function App() {
       height:"100vh",
       width:"100vw",
       background:"purple"
-    }}>
-      <DragDropContext onDragEnd={() => { }}>
+    }}
+
+
+    >
+      <DragDropContext onDragEnd={onDragEnd}>
         <Project />
       </DragDropContext>
     </div>
