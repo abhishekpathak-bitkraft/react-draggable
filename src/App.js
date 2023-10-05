@@ -26,6 +26,8 @@ function App() {
     }
 
     let add, active = data;
+    
+    console.log("Active: "+active)
 
     if (source.droppableId === "allDops") {
       add = data[source.index];
@@ -35,6 +37,8 @@ function App() {
     if (destination.droppableId === "allDops") {
       active.splice(destination.index, 0, add);
     }
+
+    console.log("End: "+active)
 
     setData(active)
 
