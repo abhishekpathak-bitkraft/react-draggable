@@ -21,10 +21,12 @@ function App() {
 
     if (!destination) return;
 
+    if (destination.index === source.index) {
+      return;
+    }
+
     let add, active = data;
     
-    console.log("Active: "+active)
-
     if (source.droppableId === "allDops") {
       add = data[source.index];
       active.splice(source.index, 1);
@@ -33,12 +35,8 @@ function App() {
     if (destination.droppableId === "allDops") {
       active.splice(destination.index, 0, add);
     }
-
-    console.log("End: "+active)
-
     setData(active)
 
-    console.log(result)
   }
 
 
