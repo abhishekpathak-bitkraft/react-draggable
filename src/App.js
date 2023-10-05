@@ -18,7 +18,10 @@ function App() {
 
     const { source, destination } = result;
 
+    console.log(result)
+
     if (!destination) return;
+
     if (destination.id === source.id) {
       return;
     }
