@@ -8,17 +8,16 @@ import { useEffect } from 'react';
 
 function App() {
 
-  const [data, setData]= useState([]);
-  
-  useEffect(()=>{
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
     setData(Projects)
-  },[])
+  }, [])
 
   const onDragEnd = (result) => {
 
     const { source, destination } = result;
 
-    console.log(result)
 
     if (!destination) return;
 
@@ -26,10 +25,18 @@ function App() {
       return;
     }
 
-    let add, active= Projects;
+    let add, active = data;
 
+    if (source.droppableId === "allDops") {
+      add = data[source.index];
+      active.splice(source.index, 1);
+    }
 
+    if (destination.droppableId === "allDops") {
+      active.splice(destination.index, 0, add);
+    }
 
+    setData(active)
 
     console.log(result)
   }
